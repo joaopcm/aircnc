@@ -12,16 +12,16 @@ module.exports = {
   async store(req, res) {
     const { filename } = req.file
     const { company, techs, price } = req.body
-    const { userId } = req.headers
+    const { userid } = req.headers
 
-    const user = await User.findById(userId)
+    const user = await User.findById(userid)
 
     if (!user) {
       return res.status(400).json({ error: 'User does not exist' })
     }
 
     const spot = await Spot.create({
-      user: userId,
+      user: userid,
       thumbnail: filename,
       company,
       techs: techs.split(',').map(tech => tech.trim()),

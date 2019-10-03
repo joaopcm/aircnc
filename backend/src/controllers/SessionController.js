@@ -9,7 +9,8 @@ module.exports = {
 
     const user = await User.findOneAndUpdate(filter, dataToUpsert, {
       new: true,
-      upsert: true
+      upsert: true,
+      useFindAndModify: false
     })
 
     return res.json(user)
