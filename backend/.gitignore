@@ -1,4 +1,11 @@
+#dependencies
 node_modules
+
+#env variables
+.env
+
+#uploads folder only
+uploads/*
 
 # Logs
 logs

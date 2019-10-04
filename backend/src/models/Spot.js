@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+require('dotenv')
 
 const SpotSchema = new mongoose.Schema({
   thumbnail: String,
@@ -16,7 +17,7 @@ const SpotSchema = new mongoose.Schema({
 })
 
 SpotSchema.virtual('thumbnail_url').get(function() {
-  return `http://192.168.1.13:3333/files/${this.thumbnail}`
+  return `${process.env.BASE_URL}:${process.env.APP_PORT}/files/${this.thumbnail}`
 })
 
 module.exports = mongoose.model('Spot', SpotSchema)
