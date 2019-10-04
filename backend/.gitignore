@@ -6,6 +6,7 @@ node_modules
 
 #uploads folder only
 uploads/*
+!uploads/.gitkeep
 
 # Logs
 logs
