@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-require('dotenv')
 
 const SpotSchema = new mongoose.Schema({
   thumbnail: String,
